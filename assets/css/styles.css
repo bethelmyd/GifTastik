@@ -73,9 +73,9 @@ footer{
     border-top: 10px solid teal;
     margin-top: 20px;
     padding: 10px 0;
-    position: absolute;
+/*    position: absolute;
     bottom: 0;
-    /*left: 0;*/
+*/    /*left: 0;*/
     width: 100%;
 }
 
@@ -83,4 +83,8 @@ img{
     border-radius: 10px;
     margin-bottom: 5px;
     margin-right: 5px;
+}
+
+.imageBlock{
+    float: left;    
 }

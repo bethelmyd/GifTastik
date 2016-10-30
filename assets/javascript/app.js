@@ -1,16 +1,16 @@
 "use strict";
 
 $().ready(function(){
-	var topics = ["miniature schnauzer", "boxer", "english bulldog", "petit basset griffon vendeen"];
+	var topics = ["miniature schnauzer", "boxer (dog)", "english bulldog", "petit basset griffon vendeen"];
 	var buttonArea = $("#buttonArea");  //so that I don't have to reference the DOM over and over
 	var imageArea = $("#imageArea"); //ditto
 
 	function createButton(value)
 	{
 		var button = $("<button>")
-						.attr({"id": value, "data-dog": value, "class": "btn btn-success imageButton"})
-						.css({"margin": "5px"})
-						.text(value);
+		.attr({"id": value, "data-dog": value, "class": "btn btn-success imageButton"})
+		.css({"margin": "5px"})
+		.text(value);
 		buttonArea.append(button);
 		$("#dataEntry").val("");
 	}
@@ -25,8 +25,38 @@ $().ready(function(){
 
 	function getImages()
 	{
+		var imageArea = $('#imageArea');
+		imageArea.empty();
 		var whichImages = $(this).data("dog");
-		alert(whichImages);
+
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whichImages + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+		$.ajax({
+			url: queryURL,
+			method: 'GET'
+		})
+		.done(function(response) {
+			var results = response.data;
+
+			for (var i = 0; i < results.length; i++) {
+				var gifDiv = $('<div class="imageBlock">')
+
+				var rating = results[i].rating;
+
+				if (rating == "r") continue;
+
+				var p = $('<p>').text("Rating: " + rating);
+
+				var dogImage = $('<img>');
+				dogImage.attr('src', results[i].images.fixed_height_still.url);
+
+				gifDiv.append(dogImage)
+				gifDiv.append(p)
+
+				imageArea.append(gifDiv);
+			}
+		});
+
 	}
 
 	function addButton()
