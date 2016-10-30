@@ -45,16 +45,21 @@ $().ready(function(){
 
 				if (rating == "r") continue;
 
-				var p = $('<p>').text("Rating: " + rating);
+				var p = $('<p>').text("Rating: " + rating).attr("class", "text-center lead");
 
 				var dogImage = $('<img>');
-				dogImage.attr('src', results[i].images.fixed_height_still.url);
+				dogImage.attr('src', results[i].images.fixed_height_small_still.url)
+				.attr("data-still", results[i].images.fixed_height_small_still.url)
+				.attr("data-animate", results[i].images.fixed_height_small.url)
+				.attr("data-state", "still")
+				.attr("class", "gif");
 
 				gifDiv.append(dogImage)
 				gifDiv.append(p)
 
 				imageArea.append(gifDiv);
 			}
+		$(".gif").on("click", toggleAnimation);			
 		});
 
 	}
@@ -75,6 +80,23 @@ $().ready(function(){
 		}
 		topics.push(value);
 		createButton(value);
+		$(".imageButton").on("click", getImages);
+	}
+
+	function toggleAnimation()
+	{
+             var state = $(this).attr("data-state");
+             if(state == "still")
+            {
+                $(this).attr("src", $(this).data("animate"));
+                $(this).attr("data-state","animate");
+            }
+            else
+            {
+                 $(this).attr("src", $(this).data("still"));
+                $(this).attr("data-state","still");
+               
+            }
 	}
 
 	function setUpHandlers()
