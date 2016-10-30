@@ -29,7 +29,7 @@ $().ready(function(){
 		imageArea.empty();
 		var whichImages = $(this).data("dog");
 		whichImages = whichImages.replace(/\s/g, "+");  //replace the space with a + sign for the search string in the URL
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + whichImages + "&api_key=dc6zaTOxFJmzC&limit=10";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + whichImages + "&api_key=dc6zaTOxFJmzC&limit=10";
 		// console.log(queryURL);
 		$.ajax({
 			url: queryURL,
