@@ -11,15 +11,15 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
-#main, #header{
-    padding: 0px;
+#mainHeader, #header{
+    padding: 10px;
     background-color: white;
     border-radius: 5px;
     /*position: relative;*/
 }
 
-#header{
-    padding: 10px;
+#mainHeader{
+    background-color: #666;
 }
 
 #main  p, #main h3{
@@ -41,7 +41,33 @@ h1, h2, h3, h4, h5, h6{
     margin-top: 5px;
 }
 
+#submitBtn{
+    width: 100%;
+    margin-top: 5px;
+}
 
+#dataEntry{
+    display: inline-block;
+    width: 100%;
+}
+
+#formCol{
+    border: 2px solid teal;
+    padding: 5px;
+}
+
+#imageCol{
+    border: 2px solid teal;    
+}
+
+#imageCol h4, #buttonCol h4{
+     text-decoration: underline;
+}
+#buttonCol, #imageCol{
+    border: 2px solid teal;   
+    margin-bottom: 10px;
+    padding: 5px;    
+}
 footer{
     background-color: #666666;
     border-top: 10px solid teal;
@@ -56,26 +82,5 @@ footer{
 img{
     border-radius: 10px;
     margin-bottom: 5px;
-}
-
-#rightImage, #leftImage, span{
-    display: inline-block;
-    padding: 0;
-}
-
-#choices li{
-    cursor: pointer;
-}
-
-#clock{
-    display: none;
-}
-
-#answerArea{
-    height: 300px;
-}
-
-#splashScreen{
-    background-image: url("../images/concrete_seamless.png");
-    padding: 0;
+    margin-right: 5px;
 }

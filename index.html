@@ -20,7 +20,7 @@
 <body>
 
 	<div class="container text-center"> 
-		<h2>David G. Bethelmy - Gif Emporium</h2>
+		<h2 id = "mainHeader">David G. Bethelmy - Gif Emporium</h2>
 	</div>
 
 	<main class="container">
@@ -33,22 +33,27 @@
 		</section>
 		<section class="row">
 			<div class = "col-md-12">
-				<div id= "buttons">
+				<div id="buttonCol">
+				<h4 class="text-center">Buttons</h4>
+					<div id= "buttonArea">
+					</div>
 				</div>
 			</div>
 		</section>
 		<section class="row">
-			<div id = "imageCol" class = "col-md-9">
-				<h4 class="text-center">Images</h4>
-				<div id="images">
-
+			<div class = "col-md-9">
+				<div id = "imageCol" >
+					<h4 class="text-center">Images</h4>
+					<div id="imageArea"></div>
 				</div>
 			</div>
-			<div id = "formCol" class = "col-md-3">
-				<h4>Type in the name of a dog breed to add a search button.</h4>
-				<div id="form">
-					<input type="text" id="dataEntry" name="dataEntry"><br>
-					<button id = "submitBtn" class="btn btn-success">Submit</button>
+			<div class = "col-md-3">
+				<div id = "formCol">
+					<h4>Type in the name of a dog breed to add a search button.</h4>
+					<div id="form">
+						<input type="text" id="dataEntry" name="dataEntry" autofocus>
+						<button id = "submitBtn" class="btn btn-success">Submit</button>
+					</div>
 				</div>
 			</div>
 		</section>
