@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>DGB's Everything Dog Trivia</title>
+	<title>DGB's Gif Emporium</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
@@ -20,50 +20,35 @@
 <body>
 
 	<div class="container text-center"> 
-		<h2>David G. Bethelmy - Doggy Pursuit</h2>
+		<h2>David G. Bethelmy - Gif Emporium</h2>
 	</div>
 
 	<main class="container">
 		<section class="row">
-			
-			<div class="col-md-2 text-center"><span id= "leftImage"></span></div>
-			<div class = "col-md-8">
-				<div id= "header" >
-					<h4 class="text-center">Are you are a dog's best friend?</h4>
-					<h5 class="text-center">Take this <span id = "numberOfQuestions"></span>-question quiz and find out.</h5>
-					<div class = "text-center"><button id = "startBtn" class="btn btn-success">Start Quiz</button></div>
+			<div class = "col-md-12">
+				<div id= "header" class="text-center" >
+					<h4 class="text-center">View Gifs of Dog Breeds</h4>
 				</div>
 			</div>
-			<div class="col-md-2 text-center"><span id= "rightImage"></span></div>			
 		</section>
 		<section class="row">
-			<div id= "main" class = "col-md-12">
-				<div id="splashScreen" class="text-center"><img src="assets/images/schnauzers1.jpg" alt="Picture of My Schnauzers"></div>
-				<div id="questionBlock">
-					<h4 id="clock">Question number: <span id="questionNumber"></span></h4>
-					<h5>Time left: <span id="timeLeft"></span> seconds</h5>
-					<p id="question">What is?</p>
-					<div id="choiceBlock">
-						<ul id = "choices" class="list-group">
-							<li id = "A" class="list-group-item">First item</li>
-							<li id = "B" class="list-group-item">Second item</li>
-							<li id = "C" class="list-group-item">Third item</li>
-							<li id = "D" class="list-group-item">Fourth item</li>
-						</ul>
-					</div>
-					<!-- <div class = "text-center"><button id = "submitBtn" class="btn btn-success">Submit</button></div> -->
+			<div class = "col-md-12">
+				<div id= "buttons">
 				</div>
-				<div id = "answerArea" class="text-center">
-					<h4 id="answer"></h4>
-					<p id="answerImage"></p>
+			</div>
+		</section>
+		<section class="row">
+			<div id = "imageCol" class = "col-md-9">
+				<h4 class="text-center">Images</h4>
+				<div id="images">
+
 				</div>
-				<div id="summaryArea">
-					<h3>Quiz Results</h3>
-					<p>Number of questions: <span id="numQuestions"></span></p>
-					<p>Number of correct answers: <span id="numCorrect"></span></p>
-					<p>Number of incorrect answers: <span id="numWrong"></span></p>
-					<p>Friend meter: <span id="bff"></span></p>
-					<p class="text-center"><button id = "restartBtn" class="btn btn-success">Restart</button></p>
+			</div>
+			<div id = "formCol" class = "col-md-3">
+				<h4>Type in the name of a dog breed to add a search button.</h4>
+				<div id="form">
+					<input type="text" id="dataEntry" name="dataEntry"><br>
+					<button id = "submitBtn" class="btn btn-success">Submit</button>
 				</div>
 			</div>
 		</section>
